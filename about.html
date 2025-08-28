@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mis About</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <img src="img/logo3.jpg" alt="MANJARA INTERNATIONAL SCHOOL" width="40" height="40"
+                    class="d-inline-block align-text-top me-2">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="m-0 text-primary"></i>Manjara International School</h1>
+                    </a>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-auto">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link active">About Us</a>
+                    <a href="classes.html" class="nav-item nav-link">Gallery</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                            <a href="facility.html" class="dropdown-item">School Facilities</a>
+                            <a href="call-to-action.html" class="dropdown-item">Become A Teachers</a>
+                            <a href="appointment.html" class="dropdown-item">Make Appointment</a>
+                            <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#admissionModal">Admission Form</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                </div>
+                <a href="" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Join Us<i
+                        class="fa fa-arrow-right ms-3"></i></a>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+
+        <!-- Page Header End -->
+        <div class="container-xxl py-5 page-header position-relative mb-5" style="background-image: url('img/campus7.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <div class="container py-5">
+                <h1 class="display-2 text-white animated slideInDown mb-4">About Us</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">About Us</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Page Header End -->
+
+
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="mb-4">More About Our Work !!</h1> 
+                        <style>
+                            /* Stylish Paragraphs */
+                            .custom-text {
+                                font-size: 1.1rem; /* Decreased slightly */
+                                font-family: 'Roboto', sans-serif;
+                                color: #333;
+                                line-height: 1.7; /* Adjusted for readability */
+                                text-align: justify;
+                                transition: all 0.3s ease-in-out;
+                            }
+                        
+                            /* Highlighted Words */
+                            .custom-text strong {
+                                color: #562415;
+                                font-weight: 600;
+                            }
+                        
+                            /* Animated Underline Effect */
+                            .highlight {
+                                display: inline-block;
+                                position: relative;
+                                color: #714e18;
+                                font-weight: 600;
+                            }
+                        
+                            .highlight::after {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                bottom: -3px;
+                                width: 100%;
+                                height: 3px;
+                                background-color: #795114;
+                                transform: scaleX(0);
+                                transition: transform 0.3s ease-in-out;
+                            }
+                        
+                            .highlight:hover::after {
+                                transform: scaleX(1);
+                            }
+                        
+                            /* Animation Effect */
+                            .fade-in {
+                                opacity: 0;
+                                transform: translateY(30px);
+                                animation: fadeInUp 1s ease-out forwards;
+                            }
+                        
+                            @keyframes fadeInUp {
+                                from {
+                                    opacity: 0;
+                                    transform: translateY(30px);
+                                }
+                                to {
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                }
+                            }
+                            /* Common Box Styling */
+.section-box {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+/* BMSD Section */
+.bmsd-box {
+    background: linear-gradient(135deg, rgba(255, 223, 186, 0.3), rgba(255, 183, 94, 0.4));
+    border-left: 5px solid #c48220;
+}
+
+/* MIS Section */
+.mis-box {
+    background: linear-gradient(135deg, rgba(186, 255, 235, 0.3), rgba(94, 183, 255, 0.4));
+    border-left: 5px solid #207ac4;
+}
+
+/* Institutions Section */
+.institutions-box {
+    background: linear-gradient(135deg, rgba(255, 250, 215, 0.3), rgba(250, 235, 150, 0.4));
+    border-left: 5px solid #daa520;
+}
+
+/* Stylish Paragraphs */
+.custom-text {
+    font-size: 0.95rem;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.5;
+    text-align: justify;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 6px;
+}
+
+/* Subtle shimmer effect */
+.custom-text strong {
+    color: #e3633c;
+    font-weight: 600;
+    animation: shimmer 2s infinite ease-in-out alternate;
+}
+
+/* Animated Underline */
+.highlight::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #795114;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.highlight:hover::after {
+    transform: scaleX(1);
+}
+
+/* Fade-in Effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+                        </style>
+                        
+                        <!-- Updated Section -->
+                        <p class="custom-text fade-in">
+                            <strong>◆◇ BMSD Society: A Legacy of Educational Excellence ◇◆</strong>
+                            <br>
+                            Twenty three years ago, as a visionary leader and after a brief political career, <strong>Dr. Sidheshwar Bellale</strong>, along with other distinguished leaders from various fields across the Marathwada region— 
+                            <strong>Dr. Bapurao Dhage, Prof. Rajkumar Kawade, Dr. Dillip Palimkar, Dr. Bhalchandra Karande, Sou. Jyoti Kadwade, Prof. Ram Bellale, Prof. Bapurao Shinde, and Sou. Meenabai Khedkar</strong>— 
+                            recognized the need for higher education and research to drive regional progress and prosperity.
+                            
+                        </p>
+                        
+                        <p class="custom-text fade-in">
+                            United by a shared vision, these distinguished individuals established a research hub and a mathematics institution in Ahmedpur and other parts of Marathwada. 
+                            Inspired by their admiration for mathematics, they named the institute <strong>Balaghat Mathematical Sciences Development Society (BMSD Society)</strong>.
+                        </p>
+                        
+                        <p class="custom-text fade-in">
+                            The journey began in <span class="highlight">1999</span> with the establishment of Bellale's Mathematics Institution in Ahmedpur. Over time, the society expanded rapidly, setting up 
+                            <strong>CBSE and ICSE schools, junior colleges, research hubs, and mathematics institutions</strong> to cater to the evolving educational needs of the region.
+                        </p>
+                        
+                        <p class="custom-text fade-in">
+                            <strong>◆◇ Manjara International School (MIS) ◇◆</strong>
+                            <br>
+                            In <span class="highlight">2018-2019</span>, <strong>MIS</strong> was founded by <strong>UDISE : 27280101009</strong> under the aegis of <strong>BMSD Society</strong>, established by <strong>Hon' Dr. Sidheshwar Bellale</strong>. 
+                            MIS is a premier educational institution known for its holistic approach to learning, modern infrastructure, and serene environment, making it an ideal place for students to grow.
+                        </p>
+                        
+                        <p class="custom-text fade-in">
+                            Away from the distractions of city life and unnecessary violence, the school offers a <span class="highlight">clean, natural, and energetic atmosphere</span> where children can thrive. 
+                            State-of-the-art amenities further enhance the learning experience, ensuring that students feel <strong>engaged and comfortable</strong>.
+                        </p>
+                        
+                        <p class="custom-text fade-in">
+                            MIS focuses on <span class="highlight">continuous and comprehensive education</span>, fostering students' <strong>intellectual, social, emotional, and physical</strong> development. 
+                            The school nurtures <span class="highlight">logical thinking, social awareness, and research-oriented learning</span>, shaping well-rounded individuals prepared for the future.
+                        </p>
+                        
+                        <p class="custom-text fade-in">
+                            <strong>◆◇ Institutions Operated by BMSD Society:</strong>
+                            <ul>
+                                <li>Shri Saraswati Nursery, LKG, UKG (ICSE) School, Ahmedpur</li>
+                                <li>Shri Saraswati Primary & Secondary (ICSE) School, Ahmedpur</li>
+                                <li>Shri Saraswati Junior College, Ahmedpur</li>
+                                <li>Shri Saraswati (ICSE) Pre-Primary School, Ahmedpur</li>
+                                <li>Balaghat Mathematical Sciences IIT/JEE Institute, Ahmedpur</li>
+                                <li>Shri Saraswati Nursery, LKG, UKG (ICSE) School, Savergaon</li>
+                                <li>Shri Saraswati Primary & Secondary (ICSE) School, Savergaon</li>
+                                <li>Shri Saraswati Junior College, Savergaon</li>
+                                <li>Manjara International School (MIS), Ahmedpur</li>
+                            </ul>
+                        </p>
+                        
+                        <p class="custom-text fade-in">
+                            Through its commitment to <strong>academic excellence</strong>, BMSD Society continues to shape young minds, providing them with opportunities to excel in mathematics, science, and research, 
+                            thereby contributing to the overall development of the region.
+                        </p>
+                        
+                    </div>
+        
+                    <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <img class="img-fluid w-75 rounded-circle bg-light p-3" src="img/thumb_1.jpeg" alt="">
+                            </div>
+                            <div class="col-6 text-start" style="margin-top: -150px;">
+                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/thumb_2.jpeg" alt="">
+                            </div>
+                            <div class="col-6 text-end" style="margin-top: -150px;">
+                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/thumg3.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <style>
+                    /* Card Styling */
+                    .custom-card {
+                        transition: all 0.4s ease-in-out;
+                        border-radius: 10px;
+                        background-color: white;
+                    }
+                
+                    /* Hover Effect */
+                    .custom-card:hover {
+                        transform: scale(1.05);
+                        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+                        background-color: #ff9800; /* Orange Color */
+                        color: white;
+                    }
+                
+                    /* Image Styling */
+                    .custom-card img {
+                        transition: all 0.4s ease-in-out;
+                    }
+                
+                    .custom-card:hover img {
+                        transform: scale(1.1);
+                    }
+                
+                    /* Moments Section Styling */
+                    .moments-card {
+                        transition: all 0.4s ease-in-out;
+                        border-radius: 12px;
+                        overflow: hidden;
+                    }
+                
+                    .moments-card:hover {
+                        transform: scale(1.1);
+                        box-shadow: 0px 15px 30px rgba(255, 152, 0, 0.4);
+                        background-color: #ff9800;
+                        color: white;
+                    }
+                </style>
+                
+                
+        
+        <!-- About End -->
+         
+ <!-- Qualities Section -->
+ <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+/* Card Background & Hover Effects */
+.bg-light-blue {
+    background-color: #e6f0ff; /* Soft light blue */
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.custom-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #d4e6fb;
+}
+
+/* Center Image */
+.card img {
+    margin: 0 auto;
+    display: block;
+}
+
+/* Section Title Styling */
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #007bff;
+    left: 25%;
+    bottom: 0;
+}
+</style>
+
+
+<!-- UDISE -->
+<h2 class="section-title mt-5 fade-in text-center" data-aos="fade-up">UDISE: 27280101009</h2>
+<p style="font-size: 18px;">
+    <span style="font-weight: bold; color: #a03000;">UDISE: 27280101009</span>, Manjara International School, follows the 
+    <span style="font-weight: bold; color: #a03000;">ICSE pattern.</span> MIS is the second school in Latur to have a proposal for ICSE education from Playgroup to 12th grade. 
+    It is accredited by the 
+    <span style="font-weight: bold; color: #a84600;">Council for the Indian School Certificate Examinations (CISCE)</span>.
+  </p>
+  
+
+<!-- Qualities Section -->
+<h2 class="section-title mt-5 fade-in text-center" data-aos="fade-up">Qualities</h2>
+
+<div class="row g-4 mt-4 fade-in">
+    <!-- Card 1 -->
+    <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card border-0 shadow-sm p-3 custom-card bg-light-blue text-center">
+            <img src="img/logo3.jpg" alt="School Logo" width="60">
+            <h5 class="fw-bold mt-3">Holistic Development</h5>
+            <p>The holistic approach used during the development phase addresses and supports
+                the well-being of the individual in all aspects.</p>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card border-0 shadow-sm p-3 custom-card bg-light-blue text-center">
+            <img src="img/logo3.jpg" alt="School Logo" width="60">
+            <h5 class="fw-bold mt-3">Age-Appropriate Curriculum</h5>
+            <p>It is essential for their growth and development to design a curriculum
+                suitable for the age of infants, toddlers, and preschoolers.</p>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card border-0 shadow-sm p-3 custom-card bg-light-blue text-center">
+            <img src="img/logo3.jpg" alt="School Logo" width="60">
+            <h5 class="fw-bold mt-3">21st Century Skill-Based Education</h5>
+            <p>A 21st-century skills-based curriculum moves away from content acquisition
+                and rote memorization.</p>
+        </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="card border-0 shadow-sm p-3 custom-card bg-light-blue text-center">
+            <img src="img/logo3.jpg" alt="School Logo" width="60">
+            <h5 class="fw-bold mt-3">Focus on Physical Activities</h5>
+            <p>AIS believes that healthy minds produce healthy bodies. As a result, we offer
+                a comprehensive age-appropriate fitness program.</p>
+        </div>
+    </div>
+</div>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false,
+  });
+</script>
+
+ 
+        <!-- Team Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Managing Team</h1>
+                    <style>
+                        .team-info {
+                            font-size: 1.1rem;
+                            font-weight: 500;
+                            font-style: italic;
+                            color: #555;
+                            text-align: center;
+                            border-left: 5px solid #ff9800;
+                            padding-left: 15px;
+                            margin-top: 10px;
+                            transition: all 0.3s ease-in-out;
+                        }
+                    </style>
+                    <p class="team-info">
+                        "A team of visionary leaders dedicated to academic excellence, innovation, and holistic student development, ensuring a nurturing and progressive learning environment."
+                    </p>
+                </div>
+        
+                <section style="background-color: #f9f9f9; padding: 60px 20px;">
+                    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;">
+        
+                        <style>
+                            .team-card {
+                                background: white;
+                                border-radius: 20px;
+                                padding: 20px;
+                                text-align: center;
+                                width: 280px;
+                                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                                transition: transform 0.4s ease, box-shadow 0.4s ease;
+                                cursor: pointer;
+                                margin: 15px;
+                            }
+        
+                            .team-card:hover {
+                                transform: translateY(-15px);
+                                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+                            }
+        
+                            .team-image {
+                                width: 250px;
+                                height: 250px;
+                                border-radius: 50%;
+                                object-fit: cover;
+                                border: 6px solid;
+                                margin-bottom: 15px;
+                            }
+        
+                            .social-icon {
+                                margin: 0 6px;
+                                font-size: 16px;
+                                transition: transform 0.3s, box-shadow 0.3s;
+                                width: 34px;
+                                height: 34px;
+                                line-height: 34px;
+                                border-radius: 50%;
+                                display: inline-flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: white;
+                                text-decoration: none;
+                            }
+        
+                            .instagram { background: #f86395; }
+                            .facebook { background: #579af2; }
+                            .youtube { background: #bb0808; }
+                            .whatsapp { background: #52da84; }
+                            .linkedin { background: #1362b2; }
+                            .twitter { background: #3fa8e9; }
+        
+                            .social-icon:hover {
+                                transform: scale(1.3);
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                            }
+                        </style>
+        
+                        <!-- President Card -->
+                        <div class="team-card">
+                            <img src="img/prisedent_2.jpg" alt="President" class="team-image" style="border-color: #e85613;">
+                            <h3 style="margin: 10px 0 5px; font-family: 'Poppins', sans-serif;">Dr. S. S. Patil</h3>
+                            <p style="color: gray; margin-bottom: 15px;">President</p>
+                            <div>
+                                <a href="https://www.instagram.com/sidheshwarbellale?igsh=MWR4ZjluMWlqMGhvdw==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/share/12FWQPhQH7B/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://youtube.com/@sidheshwarbellale?si=eTbyY4iy0b0IzfK1" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+        
+                        <!-- Vice President Card -->
+                        <div class="team-card">
+                            <img src="img/Vice_president.jpg"Vice President class="team-image" style="border-color: #e85613;">
+                            <h3 style="margin: 10px 0 5px; font-family: 'Poppins', sans-serif;">Mr. Ram Bellale</h3>
+                            <p style="color: gray; margin-bottom: 15px;">Vice President</p>
+                            <div>
+                                <a href="https://www.instagram.com/rambellale?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/share/1DLcWJAwnr/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+        
+                        <!-- Secretary Card -->
+                        <div class="team-card">
+                            <img src="img/secratray.jpg" alt="Secretary" class="team-image" style="border-color: #e85613;">
+                            <h3 style="margin: 10px 0 5px; font-family: 'Poppins', sans-serif;">Mrs. Jyoti Patil</h3>
+                            <p style="color: gray; margin-bottom: 15px;">Secretary</p>
+                            <div>
+                                <a href="https://wa.me/91xxxxxxxxxx" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+        
+                        <!-- Member Card -->
+                        <div class="team-card">
+                            <img src="img/member1.jpg" alt="Member" class="team-image" style="border-color: #e85613;">
+                            <h3 style="margin: 10px 0 5px; font-family: 'Poppins', sans-serif;">Dr. Dilip Palimkar</h3>
+                            <p style="color: gray; margin-bottom: 15px;">Member</p>
+                            <div>
+                                <a href="https://youtube.com/@dspalimkar?si=8tBXixDTLTo4WxOo" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.instagram.com/palimkardilip?igsh=bXd0dGJ1MXl0dj" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/share/1AjU8XhLjE/" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+        
+                        <!-- Managing Director Card -->
+                        <div class="team-card">
+                            <img src="img/managing_director.jpg" alt="Managing Director" class="team-image" style="border-color: #e85613;">
+                            <h3 style="margin: 10px 0 5px; font-family: 'Poppins', sans-serif;">Mr. Sandesh Bellale</h3>
+                            <p style="color: gray; margin-bottom: 15px;">Managing Director</p>
+                            <div>
+                                <a href="https://www.linkedin.com/in/sandesh-bellale-6a55672bb/" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/bsandeshh_/?theme=dark" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://x.com/SandeshBellale?t=xuQ-g6cRJw3XDOrNS-geXA&s=09" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                    <!-- Font Awesome CDN -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+                </section>
+            </div>
+        </div>
+        
+        <!-- Team End -->
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4"> Get In Touch </h3>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Khadgaon-Pakharsangvi Road, Latur</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9175518919, +91 9130722285, +91 8830005678</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>manjaraschool@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a> -->
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/14s7bTfWPP/"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://youtube.com/@sidheshwarbellale?si=aCPWYGiL5dGb_TQy"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/manjara.international.school_?igsh=MW0zMW04NnVmMWNzMw=="><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Quick Links</h3>
+                        <a class="btn btn-link text-white-50" href="about.html">About Us</a>
+                        <a class="btn btn-link text-white-50" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="#" data-bs-toggle="modal" data-bs-target="#admissionModal">Admission Form</a>
+                        <a class="btn btn-link text-white-50" href="classes.html">Gallery</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Photo Gallery</h3>
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1 square-img" src="img/thumb_1.jpeg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1 square-img" src="img/christmus.2.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1 square-img" src="img/thumb5.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1 square-img" src="img/kite3.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1 square-img" src="img/thumg3.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1 square-img" src="img/art_comp_7.jpg" alt="">
+                            </div>
+                        </div>
+                        
+                        <style>
+                        .square-img {
+                            width: 100%;
+                            height: 100px; /* Adjust height as you like */
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                        </style>
+                        
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Newsletter</h3>
+                        <p>Have questions or need more information ? Drop us an email—we'd love to hear from you!📝</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <form id="newsletterForm">
+                                <input id="userEmail" class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" required>
+                                <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Sign Up</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <script>
+                    document.getElementById("newsletterForm").addEventListener("submit", function(event) {
+                        event.preventDefault(); // Prevents the form from reloading the page
+                        
+                        var email = document.getElementById("userEmail").value;
+                        var subject = "Newsletter Subscription";
+                        var body = "Hello,\n\nI would like to subscribe to the newsletter with my email: " + email + "\n\nBest regards.";
+                        
+                        window.location.href = "mailto:manjaraschool@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+                    });
+                    </script>
+                    
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">@bmsds</a>, All Right Reserved. 
+							
+							<!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							Designed By Sandesh Bellale.
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
