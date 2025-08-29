@@ -285,10 +285,10 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">@bmsds</a>, All Right Reserved. 
+                            &copy; <a class="border-bottom" href="#">@mis</a>, All Right Reserved. 
 							
 							<!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By Sandesh Bellale.
+							Designed By <a class="border-bottom" href="https://www.linkedin.com/in/sandesh-bellale-6a55672bb/" target="_blank" rel="noopener noreferrer">Sandesh Bellale</a>.
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
@@ -319,6 +319,143 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Admission Form Modal -->
+    <div class="modal fade" id="admissionModal" tabindex="-1" aria-labelledby="admissionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title text-white" id="admissionModalLabel">Admission Application Form</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="admissionForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" required>
+                                    <label for="fullName">Full Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="age" name="age" placeholder="Age" required>
+                                    <label for="age">Age</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="motherName" name="motherName" placeholder="Mother's Name" required>
+                                    <label for="motherName">Mother's Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="religion" name="religion" placeholder="Religion">
+                                    <label for="religion">Religion (Optional)</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="motherTongue" name="motherTongue" placeholder="Mother Tongue" required>
+                                    <label for="motherTongue">Mother Tongue</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="date" class="form-control" id="dob" name="dob" required>
+                                    <label for="dob">Date of Birth</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="address" name="address" placeholder="Address" style="height: 80px" required></textarea>
+                                    <label for="address">Address</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-control" id="classToJoin" name="classToJoin" required>
+                                        <option value="">Select Class</option>
+                                        <option value="Nursery">Nursery</option>
+                                        <option value="Pre-KG">Pre-KG</option>
+                                        <option value="LKG">LKG</option>
+                                        <option value="UKG">UKG</option>
+                                        <option value="Class 1">Class 1</option>
+                                        <option value="Class 2">Class 2</option>
+                                        <option value="Class 3">Class 3</option>
+                                        <option value="Class 4">Class 4</option>
+                                        <option value="Class 5">Class 5</option>
+                                        <option value="Class 6">Class 6</option>
+                                        <option value="Class 7">Class 7</option>
+                                        <option value="Class 8">Class 8</option>
+                                    </select>
+                                    <label for="classToJoin">Class to Join</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="previousSchool" name="previousSchool" placeholder="Previous School">
+                                    <label for="previousSchool">Previous School (Optional)</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Contact Number" required>
+                                    <label for="contactNumber">Contact Number</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary w-100 py-3">Submit Application</button>
+                        </div>
+                    </form>
+                    <div class="mt-3" id="admissionResponse"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            var form = document.getElementById("admissionForm");
+            if (!form) return;
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                var formData = new FormData(this);
+                var formValues = {};
+                for (var pair of formData.entries()) { formValues[pair[0]] = pair[1]; }
+                fetch("send_admission.php", { method: "POST", body: formData })
+                .then(function(response){ if(!response.ok) { throw new Error('PHP endpoint not available'); } return response.text(); })
+                .then(function(data){
+                    document.getElementById("admissionResponse").innerHTML = '<div class="alert alert-success">' + data + '</div>';
+                    form.reset();
+                    setTimeout(function(){
+                        var modal = bootstrap.Modal.getInstance(document.getElementById('admissionModal'));
+                        if (modal) modal.hide();
+                        document.getElementById("admissionResponse").innerHTML = '';
+                    }, 3000);
+                })
+                .catch(function(){
+                    var subject = "New Admission Application: " + (formValues.fullName || "");
+                    var body = "ADMISSION APPLICATION DETAILS\n\n" +
+                        "Full Name: " + (formValues.fullName||"") + "\n" +
+                        "Age: " + (formValues.age||"") + "\n" +
+                        "Mother's Name: " + (formValues.motherName||"") + "\n" +
+                        "Religion: " + (formValues.religion || "Not provided") + "\n" +
+                        "Mother Tongue: " + (formValues.motherTongue||"") + "\n" +
+                        "Date of Birth: " + (formValues.dob||"") + "\n" +
+                        "Address: " + (formValues.address||"") + "\n" +
+                        "Class to Join: " + (formValues.classToJoin||"") + "\n" +
+                        "Previous School: " + (formValues.previousSchool || "Not provided") + "\n" +
+                        "Contact Number: " + (formValues.contactNumber||"");
+                    window.location.href = "mailto:manjaraschool@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+                    document.getElementById("admissionResponse").innerHTML = '<div class="alert alert-info">Opening your email client to send the application...</div>';
+                    form.reset();
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>
