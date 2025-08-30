@@ -1,6 +1,7 @@
 <?php
 // Include the mailer helpers
 require_once 'mailer.php';
+require_once 'supabase.php';
 
 // Collect form data
 $fullName = isset($_POST['fullName']) ? $_POST['fullName'] : '';
@@ -33,6 +34,27 @@ $body .= "Address: $address\n";
 $body .= "Class to Join: $classToJoin\n";
 $body .= "Previous School: $previousSchool\n";
 $body .= "Contact Number: $contactNumber\n";
+
+// Log to Supabase (best-effort, non-blocking)
+try {
+    $sb = supabase_client();
+    $payload = [
+        'full_name' => $fullName,
+        'age' => is_numeric($age) ? (int)$age : null,
+        'mother_name' => $motherName,
+        'religion' => $religion,
+        'mother_tongue' => $motherTongue,
+        'dob' => $dob,
+        'address' => $address,
+        'class_to_join' => $classToJoin,
+        'previous_school' => $previousSchool,
+        'contact_number' => $contactNumber,
+        'submitted_at' => date('c')
+    ];
+    $sb->insert('admissions', $payload);
+} catch (\Throwable $e) {
+    // swallow to avoid breaking UX
+}
 
 // Try to send email using SMTP
 $result = send_email($to, $subject, $body, $contactNumber);

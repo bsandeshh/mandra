@@ -786,6 +786,42 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="public-config.php"></script>
+    <script src="js/supabase.js"></script>
+    <script>
+      // Render Supabase Storage images (if configured)
+      (function(){
+        var cfg = window.supabaseBootstrap ? window.supabaseBootstrap() : { url: '', anonKey: '' };
+        if (!cfg || !cfg.url) { return; }
+        var section = document.createElement('section');
+        section.className = 'container my-5';
+        section.innerHTML = '<h2 class="text-center text-primary mb-4">📦 From Supabase Storage</h2><div id="sb-grid" class="row g-3 justify-content-center"></div>';
+        var container = document.querySelector('.container-xxl.py-5 .container');
+        if (!container) container = document.body;
+        container.appendChild(section);
+
+        var bucket = 'public';
+        var prefix = '';
+        fetch('storage_list.php?bucket=' + encodeURIComponent(bucket) + '&prefix=' + encodeURIComponent(prefix) + '&limit=60')
+          .then(function(r){ return r.json(); })
+          .then(function(json){
+            if (!json || json.error || !Array.isArray(json.files)) return;
+            var grid = document.getElementById('sb-grid');
+            json.files.forEach(function(file){
+              var col = document.createElement('div');
+              col.className = 'col-6 col-md-4 col-lg-3';
+              var isVideo = (file.mime||'').startsWith('video/');
+              if (isVideo) {
+                col.innerHTML = '<video class="img-fluid rounded shadow-sm" controls muted><source src="' + file.publicUrl + '" type="' + (file.mime||'video/mp4') + '">Your browser does not support the video tag.</video>';
+              } else {
+                col.innerHTML = '<img src="' + file.publicUrl + '" class="img-fluid rounded shadow-sm" alt="" />';
+              }
+              grid.appendChild(col);
+            });
+          })
+          .catch(function(){ /* ignore */ });
+      })();
+    </script>
 
     <!-- Admission Form Modal -->
     <div class="modal fade" id="admissionModal" tabindex="-1" aria-labelledby="admissionModalLabel" aria-hidden="true">

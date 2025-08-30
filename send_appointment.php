@@ -1,6 +1,7 @@
 <?php
 // Include the mailer helpers
 require_once 'mailer.php';
+require_once 'supabase.php';
 
 // Collect form data
 $gname = isset($_POST['gname']) ? $_POST['gname'] : '';
@@ -22,6 +23,21 @@ $body .= "Guardian Email: $gmail\n";
 $body .= "Child Name: $cname\n";
 $body .= "Child Age: $cage\n";
 $body .= "Message:\n$message\n";
+
+// Log to Supabase (best-effort)
+try {
+    $sb = supabase_client();
+    $payload = [
+        'guardian_name' => $gname,
+        'guardian_email' => $gmail,
+        'child_name' => $cname,
+        'child_age' => $cage,
+        'message' => $message,
+        'submitted_at' => date('c')
+    ];
+    $sb->insert('appointments', $payload);
+} catch (\Throwable $e) {
+}
 
 // Try to send email using SMTP
 $result = send_email($to, $subject, $body, $gmail);
