@@ -151,49 +151,35 @@
         </div>
         
         <script>
-        document.getElementById("appointmentForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent page reload
-        
+        (function(){
+          var form = document.getElementById('appointmentForm');
+          if (!form) return;
+          form.addEventListener('submit', function(event){
+            event.preventDefault();
             var formData = new FormData(this);
-            var formValues = {};
-        
-            // Convert FormData to object for email fallback
-            for (var pair of formData.entries()) {
-                formValues[pair[0]] = pair[1];
-            }
-        
-            // Try to use the PHP endpoint first
-            fetch("send_appointment.php", {
-                method: "POST",
-                body: formData
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('PHP endpoint not available');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById("responseMessage").innerHTML = '<div class="alert alert-success">' + data + '</div>';
-                document.getElementById("appointmentForm").reset();
-            })
-            .catch(error => {
-                // Fallback to mailto if PHP fails
-                console.log('Falling back to mailto:', error);
-                
-                var subject = "New Appointment Request from " + formValues.gname;
-                var body = "Guardian Name: " + formValues.gname + "\n";
-                body += "Guardian Email: " + formValues.gmail + "\n";
-                body += "Child Name: " + formValues.cname + "\n";
-                body += "Child Age: " + formValues.cage + "\n";
-                body += "Message:\n" + formValues.message + "\n";
-                
-                window.location.href = "mailto:manjaraschool@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-                
-                document.getElementById("responseMessage").innerHTML = '<div class="alert alert-info">Opening your email client to send the appointment request...</div>';
-                document.getElementById("appointmentForm").reset();
-            });
-        });
+            var values = {};
+            for (var pair of formData.entries()) { values[pair[0]] = pair[1]; }
+
+            var subject = 'New Appointment Request from ' + (values.gname || '');
+            var body = ''
+              + 'APPOINTMENT REQUEST' + '\n\n'
+              + 'Guardian Name: ' + (values.gname||'') + '\n'
+              + 'Guardian Email: ' + (values.gmail||'') + '\n'
+              + 'Child Name: ' + (values.cname||'') + '\n'
+              + 'Child Age: ' + (values.cage||'') + '\n\n'
+              + 'Message:' + '\n' + (values.message||'');
+
+            var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent('manjaraschool@gmail.com')
+              + '&su=' + encodeURIComponent(subject)
+              + '&body=' + encodeURIComponent(body);
+
+            window.open(gmailUrl, '_blank');
+            window.location.href = 'mailto:manjaraschool@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+            document.getElementById('responseMessage').innerHTML = '<div class="alert alert-info">Opening your email client to send the appointment request...</div>';
+            form.reset();
+          });
+        })();
         </script>
         
         <!-- Appointment End -->

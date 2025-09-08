@@ -112,7 +112,7 @@
                             <i class="fa fa-envelope-open fa-2x text-primary"></i>
                         </div>
                         <h5 style="font-size: 1 em; color: #e26710; margin-bottom: 0;">E-mail</h5>
-                        <h6>manjaraschool@gmail.com</h6>
+                        <h6><a href="mailto:manjaraschool@gmail.com">manjaraschool@gmail.com</a></h6>
                     </div>
                     <div class="col-md-6 col-lg-4 text-center wow fadeInUp" data-wow-delay="0.5s">
                         <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 75px; height: 75px;">
@@ -163,24 +163,36 @@
                         </div>
                         
                         <script>
-                        document.getElementById("contactForm").addEventListener("submit", function(event) {
-                            event.preventDefault(); // Prevents page reload
-                            
-                            var formData = new FormData(this);
-                            
-                            fetch("send_email.php", {
-                                method: "POST",
-                                body: formData
-                            })
-                            .then(response => response.text())
-                            .then(data => {
-                                document.getElementById("responseMessage").innerHTML = data;
-                                document.getElementById("contactForm").reset();
-                            })
-                            .catch(error => {
-                                document.getElementById("responseMessage").innerHTML = "Error sending message. Please try again.";
-                            });
-                        });
+                        (function(){
+                          var form = document.getElementById('contactForm');
+                          if (!form) return;
+                          form.addEventListener('submit', function(event){
+                            event.preventDefault();
+                            var name = document.getElementById('name').value || '';
+                            var email = document.getElementById('email').value || '';
+                            var subject = document.getElementById('subject').value || 'New Contact Message';
+                            var message = document.getElementById('message').value || '';
+
+                            var body = 'CONTACT FORM MESSAGE' + '\n\n'
+                              + 'Name: ' + name + '\n'
+                              + 'Email: ' + email + '\n'
+                              + 'Subject: ' + subject + '\n\n'
+                              + 'Message:' + '\n' + message;
+
+                            var gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent('manjaraschool@gmail.com')
+                              + '&su=' + encodeURIComponent(subject)
+                              + '&body=' + encodeURIComponent(body);
+
+                            // Try Gmail compose first
+                            window.open(gmailUrl, '_blank');
+
+                            // Also set mailto as a fallback in the same tab
+                            window.location.href = 'mailto:manjaraschool@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+                            document.getElementById('responseMessage').innerHTML = '<div class="alert alert-info">Opening your email client to send the message...</div>';
+                            form.reset();
+                          });
+                        })();
                         </script>
                         
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
